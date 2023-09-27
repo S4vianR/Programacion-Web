@@ -1,0 +1,146 @@
+body {
+  /* Light yellowish background */
+  background-color: #fffff0;
+  /* Font family */
+  font-family: 'Roboto', sans-serif;
+  /* Margin */
+  margin: 0;
+  /* Padding */
+  padding: 0;
+}
+
+section {
+  /* Flex */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Padding */
+  padding: 1.35rem;
+  /* Margin top */
+  margin-top: 15rem;
+}
+
+article {
+  /* Light blueish border */
+  border: 1px solid #add8e6;
+  /* Light blueish background */
+  background-color: #f0f8ff;
+  /* Rounded corners */
+  border-radius: 15px;
+  /* Padding */
+  padding: 1rem;
+  /* Margin bottom */
+  margin-bottom: 1rem;
+  /* Flex */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Width */
+  width: 75%;
+  /* Max width */
+  max-width: 900px;
+  /* Padding */
+  padding: 1.35rem;
+}
+
+article > h2 {
+  /* Dark blueish text color */
+  color: #000014;
+  /* No margin top */
+  margin-top: 0;
+  /* No margin bottom */
+  margin-bottom: 0;
+}
+
+article > .article__content-wrapper {
+  /* Grid */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Gap */
+  gap: 1rem;
+  /* Margin top */
+  margin-top: 1rem;
+}
+
+article > .article__content-wrapper > .article__content {
+  /* Margin */
+  margin: 0 auto;
+  /* Background color */
+  background-color: #b5cbdf;
+  /* Border-radius */
+  border-radius: 15px;
+}
+
+article > .article__content-wrapper > .article__content >  p {
+  /* Dark text color */
+  color: #000014;
+  /* Padding */
+  padding: 1rem;
+  /* Margin */
+  margin: 0;
+  /* Text align */
+  text-align: justify;
+}
+
+
+article > .article__content-wrapper > .article__content > .autor {
+  /* Font style */
+  font-style: italic;
+  /* Text align */
+  text-align: right;
+}
+
+article > .article__content-wrapper > .article__content > .autor > a {
+  /* Dark blueish text color */
+  color: #000014;
+  /* No text decoration */
+  text-decoration: underline;
+}
+
+article > .article__content-wrapper > .article__content > .autor > a:hover {
+  /* Blueish text color */
+  color: #3131bd;
+}
+
+article > .goHome {
+  /* Margin top */
+  margin-top: 2rem;
+  /* Width */
+  width: 8rem;
+}
+
+article > .goHome > button {
+  /* Light blueish background */
+  background-color: #b5cbdf;
+  /* Dark blueish text color */
+  color: #000014;
+  /* Rounded corners */
+  border-radius: 15px;
+  /* Padding */
+  padding: 0.5rem;
+  /* Border */
+  border: 1px solid #000014;
+  /* Cursor */
+  cursor: pointer;
+  /* Font size */ 
+  font-size: 1rem;
+  /* Width */
+  width: 100%;
+}
+
+article > .goHome > button:hover {
+  /* Dark blueish background */
+  background-color: #535385;
+  /* Light text color */
+  color: #fff;
+}
+
+article .imgObra {
+  /* Rounded corners */
+  border-radius: 15px;
+  /* Width */
+  width: 100%;
+  /* Height */
+  height: auto;
+}
