@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/index.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <img src="./assets/facebook-circle-fill.svg" alt="">
+        <h1>acebook</h1>
+    </header>
+    <main>
+        <div class="hero">
+            <h2>Facebook te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</h2>
+        </div>
+        <!-- Form for login -->
+        <form action="#" class="login">
+            <header>
+                <h2>
+                    Iniciar sesión
+                </h2>
+            </header>
+            <section class="login-section">
+                <div class="login-input">
+                    <input type="email" name="email" id="email" placeholder="Correo electrónico o número de teléfono" required>
+                    <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                </div>
+                <div class="form-buttons">
+                    <input type="submit" value="Iniciar sesión" />
+                </div>
+            </section>
+            <section>
+                <a href="#" title="¿Olvidaste tu contraseña?">¿Olvidaste tu contraseña?</a>
+            </section>
+        </form>
+        <div class="registration">
+            <p>No tienes cuenta? Registrate!</p>
+            <button id="popUpButton">
+                <span>
+                    Crear cuenta
+                </span>
+            </button>
+        </div>
+        <div class="pop-up" id="popUp">
+            <div>
+                <header>
+                    <h2>
+                        Registrate!
+                    </h2>
+                    <button id="closeButton">
+                        <img src="./assets/close-fill.svg" alt="close-fill" class="close-button" />
+                        <span>
+                            Cerrar
+                        </span>
+                    </button>
+                    <p>
+                        Es rápido y fácil.
+                    </p>
+                </header>
+                <div class="lineBreak"></div>
+                <section class="registration-form">
+                    <form action="#">
+                        <div class="nombres">
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                            <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                        </div>
+                        <input type="text" name="correoTelefono" id="correoTelefono" minlength="10"
+                            placeholder="Número de celular o correo electrónico" required>
+                        <input type="password" name="password" id="passwordRegistration" placeholder="Contraseña nueva"
+                            required>
+                        <small>
+                            Fecha de nacimiento
+                            <img src="./assets/question-fill.svg" alt="question-fill"
+                                title="Al proporcionar tu fecha de nacimiento, confirmas que tienes al menos 14 años de edad." />
+                        </small>
+                        <div class="fechaNacimiento">
+                            <select name="dia" id="dia" required>
+                                <option value="" disabled selected>Día</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                            <select name="mes" id="mes" required>
+                                <option value="" disabled selected>Mes</option>
+                                <option value="1">Enero</option>
+                                <option value="2">Febrero</option>
+                                <option value="3">Marzo</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Mayo</option>
+                                <option value="6">Junio</option>
+                                <option value="7">Julio</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Septiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                            <select name="ano" id="ano" required>
+                                <option value="" disabled selected>Año</option>
+                            </select>
+                        </div>
+                        <small>
+                            Sexo
+                            <img src="./assets/question-fill.svg" alt="question-fill"
+                                title="Al proporcionar tu sexo, confirmas que podríamos usarlo para personalizar tu experiencia con nuestro contenido, para sugerirte contenido que podría interesarte y para mantener segura nuestra comunidad." />
+                        </small>
+                        <!-- Do it like facebook, female, male and other -->
+                        <div class="sexo">
+                            <div>
+                                <label for="femenino">Femenino</label>
+                                <input type="radio" name="sexo" id="femenino" value="femenino" required>
+                            </div>
+                            <div>
+                                <label for="masculino">Masculino</label>
+                                <input type="radio" name="sexo" id="masculino" value="masculino" required>
+                            </div>
+                            <div>
+                                <label for="otro">Personalizado</label>
+                                <input type="radio" name="sexo" id="otro" value="otro" required>
+                            </div>
+                        </div>
+                        <div class="otro" id="otroWrapper">
+                            <select name="pronombre" id="pronombre" required>
+                                <option value="" disabled selected>Selecciona tu pronombre</option>
+                                <option value="1">Femenino: "Felicitala por su cumpleaños, le encantará"
+                                </option>
+                                <option value="2">Masculino: "Felicitalo por su cumpleaños, le encantará"
+                                </option>
+                                <option value="3">Neutro: "Felicitale por su cumpleaños, le encantará"</option>
+                            </select>
+                            <small>
+                                Tú pronombre será visible para todos.
+                            </small>
+                            <input type="text" name="genero" id="generoOtro" placeholder="Género (opcional)" />
+                        </div>
+                        <input type="submit" value="Registrarse">
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <small>
+            Meta © 2023
+        </small>
+    </footer>
+</body>
+
+<script src="./js/index.js"></script>
+
+</html>

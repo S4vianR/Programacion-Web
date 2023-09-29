@@ -1,0 +1,15 @@
+img {
+  width: 45%;
+  max-width: 300px;
+  height: auto;
+}
+
+.mostrar {
+  visibility: collapse;
+  display: none;
+}
+
+li {
+  list-style-type: circle;
+}
+

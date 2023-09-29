@@ -25,9 +25,28 @@ marquee {
 section {
     width: 97svw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1.35rem;
+}
+
+section a {
+    margin-top: 1.1rem;
+}
+
+section a > button {
+    padding: 1rem;
+    border-radius: 1.5rem;
+    border: 1px solid #4a5568;
+    background-color: #d3dce0;
+    color: #000000;
+}
+
+section a > button:hover {
+    background-color: #4a5568;
+    color: #ffffff;
+    cursor: pointer;
 }
 
 section > article {
