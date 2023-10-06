@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff6ff;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: grid;
+  /* grid-template-columns: minmax(300px, 1fr); */
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px 60px 1fr 30px;
+  grid-template-areas: "hea" "nav" "mai" "foo";
+  gap: 0.1rem;
+}
+
+header {
+  background-color: greenyellow;
+  grid-area: hea;
+}
+
+nav {
+  background-color: lightblue;
+  grid-area: nav;
+}
+
+nav.izq {
+  display: none;
+}
+
+aside {
+  display: none;
+}
+
+main {
+  background-color: lightcoral;
+  grid-area: mai;
+}
+
+footer {
+  background-color: lightgreen;
+  grid-area: foo;
+}
+
+@media (min-width: 820px) and (max-width: 1023px) {
+  .wrapper {
+    grid-template-columns: 130px 1fr;
+    grid-template-rows: 40px 60px 1fr 30px;
+    grid-template-areas: "hea hea" "nav nav" "navi mai" "foo foo";
+  }
+
+  nav.izq {
+    background-color: blue;
+    display: block;
+    grid-area: navi;
+  }
+
+  aside {
+    display: none;
+  }
+
+  main {
+    background-color: lightcoral;
+    grid-area: mai;
+  }
+
+  footer {
+    background-color: lightgreen;
+    grid-area: foo;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    grid-template-columns: 130px 1fr 130px;
+    grid-template-rows: 40px 60px 1fr 30px;
+    grid-template-areas: "hea hea hea" "nav nav nav" "navi mai asd" "foo foo foo";
+  }
+
+  nav.izq {
+    background-color: blue;
+    display: block;
+    grid-area: navi;
+  }
+
+  aside {
+    background-color: yellow;
+    display: block;
+    grid-area: asd;
+  }
+
+  main {
+    background-color: lightcoral;
+    grid-area: mai;
+  }
+
+  footer {
+    background-color: lightgreen;
+    grid-area: foo;
+  }
+}

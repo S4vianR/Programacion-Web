@@ -1,0 +1,135 @@
+:root {
+  --color-primario: #cd7f32;
+  --color-secundario: #f2d2bd;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.baseMenu {
+  position: fixed;
+  background-color: #fff;
+  border: 8px solid var(--color-primario);
+  top: 0;
+  width: 97%;
+  height: 140px;
+  z-index: 10;
+}
+
+img.logo {
+  position: relative;
+  width: 10%;
+  height: 100%;
+  top: 10%;
+}
+
+span.nombreP {
+  position: relative;
+  top: -20px;
+  left: 5%;
+  font-size: 40px;
+}
+
+header {
+  position: relative;
+  width: 99%;
+  height: 60%;
+  background-color: #fff;
+}
+
+nav {
+  position: relative;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  font-size: 20px;
+  background-color: #fff;
+}
+
+a.opMenu {
+  position: relative;
+  margin: 15px;
+  letter-spacing: 2px;
+  padding: 10px;
+  color: #a52a2a;
+  text-decoration: none;
+}
+
+a.opMenu:hover {
+  background-color: var(--color-primario);
+  border-radius: 10%;
+  color: #f0fff0;
+}
+
+aside {
+    position: fixed;
+    top: 150px;
+    width: 210px;
+    height: 100%;
+    padding-left: 15px;
+    background-color: var(--color-secundario);
+    z-index: 7;
+}
+
+a.opMenuLateral {
+    position: relative;
+    color: #a52a2a;
+    width: 83%;
+    font-size: 1.175rem;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+a.opMenuLateralHover:hover {
+    background-color: #6a4e06;
+    font-weight: 700;
+}
+
+a.opMenuLateralHover:hover .opMenuLateral {
+    color: #fff;
+}
+
+.img1 {
+    position: relative;
+    width: 70%;
+}
+
+.principal {
+    position: relative;
+    top: 200px;
+    left: 270px;
+    width: 75%;
+}
+
+ul {
+    list-style: none;
+    margin: 10% 7% 0 0;
+    padding: 5%;
+    color: #a52a2a;
+}
+
+li {
+    background-color: #deb887;
+    height: 50px;
+}
+
+footer {
+    position: relative;
+    background-color: var(--color-secundario);
+    color: #a52a2a;
+    border: 1px solid #deb887;
+    width: 99%;
+    left: 10px;
+    bottom: 0;
+    text-align: center;
+    border-radius: 2%;
+}
+
+footer img {
+    position: relative;
+    width: 5%;
+    height: auto;
+    top: 10px;
+}

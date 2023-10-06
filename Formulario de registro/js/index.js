@@ -5,6 +5,12 @@ const otroWrapper = document.getElementById("otroWrapper");
 const otro = document.getElementById("otro");
 const inputsSexo = document.querySelectorAll("input[name=sexo]")
 
+// Las funciones flecha son para funciones anonimas y las funciones 
+// anonimas son para funciones que se van a ejecutar una sola vez
+const helloWorld = () => {
+    alert("Hello World");
+};
+
 window.addEventListener("load", () => {
     /* Add "hidden" classname */
     popUp.classList.add("hidden");
