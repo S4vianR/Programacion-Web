@@ -1,0 +1,207 @@
+:root {
+  /* Slate-5 */
+  --slate-5: #f8f9fa;
+  /* Slate-30 */
+  --slate-30: #ebedef;
+  /* Slate-50 */
+  --slate-50: #dee2e6;
+  /* Gray-200 */
+  --gray-200: #ced4da;
+  /* Gray-600 */
+  --gray-600 : #6c757d;
+  /* Gray-800 */
+  --gray-800: #343a40;
+  /* Gray-900 */
+  --gray-900: #212529;
+  /* Blue 600 */
+  --blue-600: #0d6efd;
+  /* Yellow-600 */
+  --yellow-600: #ffc107;
+  /* Red-500 */
+  --red-500: #dc3545;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.slate {
+  background-color: var(--slate-50);
+}
+
+.gris {
+  background-color: var(--gray-600);
+}
+
+.negro {
+  background-color: var(--gray-900);
+}
+
+.azul {
+  background-color: var(--blue-600);
+}
+
+.rojo {
+  background-color: var(--red-500);
+}
+
+.amarillo {
+  background-color: var(--yellow-600);
+}
+
+body {
+  background-color: var(--gray-800);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  margin-top: 2rem;
+  height: 90svh;
+  width: 90svw;
+  background-color: var(--gray-900);
+  display: grid;
+  gap: 0.875rem;
+  border: 10px solid var(--slate-5);
+  grid-template-columns: 2fr 0.875fr 3fr repeat(2, 2.5fr) 0.475fr; /*  The total of the columns is 6 */
+  grid-template-rows: 0.475fr 0.875fr 1fr repeat(3, 0.9fr) 0.3fr; /* The total of the rows is 7 */
+  grid-template-areas:
+    "slate1     negro1      azul1       azul1   slate2      slate2"
+    "slate1     gris1       gris1       rojo1   negro2      azul2"
+    "slate1     negro3      amarillo1   azul3   rojo2       gris2"
+    "gris3      gris4       amarillo2   azul3   rojo2       gris2"
+    "gris3      gris4       rojo3       slate3  amarillo3   gris2"
+    "gris3      gris4       negro4      gris5   azul4       rojo4"
+    "amarillo4  amarillo4   slate4      slate4  negro5      rojo4";
+}
+
+/* First div with the slate class */
+div.sla1 {
+  grid-area: slate1;
+}
+
+/* Second div with the slate class */
+div.sla2 {
+  grid-area: slate2;
+}
+
+/* Third div with the slate class */
+div.sla3 {
+  grid-area: slate3;
+}
+
+/* Fourth div with the slate class */
+div.sla4 {
+  grid-area: slate4;
+}
+
+/* First div with the negro class */
+div.neg1 {
+  grid-area: negro1;
+}
+
+/* Second div with the negro class */
+div.neg2 {
+  grid-area: negro2;
+}
+
+/* Third div with the negro class */
+div.neg3 {
+  grid-area: negro3;
+}
+
+/* Fourth div with the negro class */
+div.neg4 {
+  grid-area: negro4;
+}
+
+/* Fith div with the negro class */
+div.neg5 {
+  grid-area: negro5;
+}
+
+/*  First div with the azul class */
+div.azu1 {
+  grid-area: azul1;
+}
+
+/* Second div with the azul class */
+div.azu2 {
+  grid-area: azul2;
+}
+
+/* Third div with the azul class */
+div.azu3 {
+  grid-area: azul3;
+}
+
+/* Fourth div with the azul class */
+div.azu4 {
+  grid-area: azul4;
+}
+
+/* First div with the amarillo class */
+div.ama1 {
+  grid-area: amarillo1;
+}
+
+/* Second div with the amarillo class */
+div.ama2 {
+  grid-area: amarillo2;
+}
+
+/* Third div with the amarillo class */
+div.ama3 {
+  grid-area: amarillo3;
+}
+
+/* Fourth div with the amarillo class */
+div.ama4 {
+  grid-area: amarillo4;
+}
+
+/* First div with the rojo class */
+div.roj1 {
+  grid-area: rojo1;
+}
+
+/* Second div with the rojo class */
+div.roj2 {
+  grid-area: rojo2;
+}
+
+/* Third div with the rojo class */
+div.roj3 {
+  grid-area: rojo3;
+}
+
+/* Fourth div with the rojo class */
+div.roj4 {
+  grid-area: rojo4;
+}
+
+/* First div with the gris class */
+div.gri1 {
+  grid-area: gris1;
+}
+
+/* Second div with the gris class */
+div.gri2 {
+  grid-area: gris2;
+}
+
+/* Third div with the gris class */
+div.gri3 {
+  grid-area: gris3;
+}
+
+/* Fourth div with the gris class */
+div.gri4 {
+  grid-area: gris4;
+}
+
+/* Fith div with the gris class */
+div.gri5 {
+  grid-area: gris5;
+}

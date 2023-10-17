@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+  display: grid;
+  gap: 0.875rem;
+  height: 98svh;
+  width: 98svw;
+  background-color: #000;
+  border: 10px solid #000;
+  grid-template-columns: 1.7fr 2.5fr 1fr 2.3fr 1fr 1fr;
+  grid-template-rows: 1.6fr 3fr 1fr 1fr;
+  grid-template-areas:
+    "ama1 roj1 azu1 azu1 ama2 bla1"
+    "bla2 bla3 bla4 roj2 azu2 bla5"
+    "bla6 azu3 azu3 bla7 ama3 bla5"
+    "roj3 ama4 ama4 bla8 bla8 bla9";
+}
+
+div {
+  display: block;
+  background: #000;
+}
+
+div.amarillo1 {
+  grid-area: ama1;
+  background-color: yellow;
+}
+
+div.amarillo2 {
+  grid-area: ama2;
+  background-color: yellow;
+}
+
+div.amarillo3 {
+  grid-area: ama3;
+  background-color: yellow;
+}
+
+div.amarillo4 {
+  grid-area: ama4;
+  background-color: yellow;
+}
+
+div.rojo1 {
+  grid-area: roj1;
+  background-color: red;
+}
+
+div.rojo2 {
+  grid-area: roj2;
+  background-color: red;
+}
+
+div.rojo3 {
+  grid-area: roj3;
+  background-color: red;
+}
+
+div.azul1 {
+  grid-area: azu1;
+  background-color: blue;
+}
+
+div.azul2 {
+  grid-area: azu2;
+  background-color: blue;
+}
+
+div.azul3 {
+  grid-area: azu3;
+  background-color: blue;
+}
+
+div.blanco1 {
+  grid-area: bla1;
+  background-color: #fff;
+}
+
+div.blanco2 {
+  grid-area: bla2;
+  background-color: #fff;
+}
+
+div.blanco3 {
+  grid-area: bla3;
+  background-color: #fff;
+}
+
+div.blanco4 {
+  grid-area: bla4;
+  background-color: #fff;
+}
+
+div.blanco5 {
+  grid-area: bla5;
+  background-color: #fff;
+  grid-row: span 2;
+}
+
+div.blanco6 {
+  grid-area: bla6;
+  background-color: #fff;
+}
+
+div.blanco7 {
+  grid-area: bla7;
+  background-color: #fff;
+}
+
+div.blanco8 {
+  grid-area: bla8;
+  background-color: #fff;
+}
+
+div.blanco9 {
+  grid-area: bla9;
+  background-color: #fff;
+}

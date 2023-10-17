@@ -28,16 +28,48 @@ nav {
 }
 
 nav.izq {
+  background-color: blue;
   display: none;
+  grid-area: navi;
 }
 
 aside {
+  background-color: yellow;
   display: none;
+  grid-area: asi;
 }
 
 main {
   background-color: lightcoral;
   grid-area: mai;
+  display: grid;
+  gap: 0.1rem;
+  grid-template-columns: minmax(250px, 1fr);
+  grid-template-areas: "h2" "p" "cat1" "cat2";
+}
+
+main > p {
+  grid-area: p;
+}
+
+main > h2 {
+  grid-area: h2;
+  text-align: center;
+}
+
+main > img {
+  justify-self: center;
+  width: 90%;
+  height: 60%;
+  padding: 0.875rem;
+}
+
+main > img.gato1 {
+  grid-area: cat1;
+}
+
+main > img.gato2 {
+  grid-area: cat2;
 }
 
 footer {
@@ -53,9 +85,7 @@ footer {
   }
 
   nav.izq {
-    background-color: blue;
     display: block;
-    grid-area: navi;
   }
 
   aside {
@@ -65,6 +95,8 @@ footer {
   main {
     background-color: lightcoral;
     grid-area: mai;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "h2 h2" "p p " "cat1 cat2";
   }
 
   footer {
@@ -75,30 +107,26 @@ footer {
 
 @media (min-width: 1024px) {
   .wrapper {
-    grid-template-columns: 130px 1fr 130px;
+    grid-template-columns: 130px 1fr 0.2fr;
     grid-template-rows: 40px 60px 1fr 30px;
-    grid-template-areas: "hea hea hea" "nav nav nav" "navi mai asd" "foo foo foo";
+    grid-template-areas: "hea hea hea" "nav nav nav" "navi mai asi" "foo foo foo";
   }
 
-  nav.izq {
-    background-color: blue;
-    display: block;
-    grid-area: navi;
-  }
-
-  aside {
-    background-color: yellow;
-    display: block;
-    grid-area: asd;
+  img {
+    justify-self: center;
+    align-self: center;
   }
 
   main {
-    background-color: lightcoral;
-    grid-area: mai;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "h2 h2" "p p" "cat1 cat2";
   }
 
-  footer {
-    background-color: lightgreen;
-    grid-area: foo;
+  nav.izq {
+    display: inline-block;
+  }
+
+  aside {
+    display: inline-block;
   }
 }

@@ -1,0 +1,22 @@
+body {
+    background-color: #f5f5dc;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: calc(50% - 5rem);
+    background-color: #cfcf78;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+    border-radius: 2rem;
+}

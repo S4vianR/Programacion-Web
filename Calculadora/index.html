@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <main>
+        <form action="#">
+            <div>
+                <label for="number1">Number 1:</label>
+                <input type="text" id="number1" placeholder="Type a number">
+            </div>
+            <div>
+                <label for="number2">Number 2:</label>
+                <input type="text" id="number2" placeholder="Type a number">
+            </div>
+            <div>
+                <label for="result" id="resultLabel">The result of the addition is:</label>
+                <input type="text" name="result" id="result" value="0" disabled>
+            </div>
+            <div>
+                <input type="radio" name="operation" id="addition">
+                <label for="addition">Addition</label>
+                <input type="radio" name="operation" id="minus">
+                <label for="minus">Minus</label>
+                <input type="radio" name="operation" id="multiplication">
+                <label for="multiplication">Multiplication</label>
+                <input type="radio" name="operation" id="division">
+                <label for="division">Division</label>
+            </div>
+            <div>
+                <button type="reset">Reset form</button>
+            </div>
+        </form>
+    </main>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
