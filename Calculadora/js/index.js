@@ -24,13 +24,18 @@ const evaluate = (op) => {
     let v1, v2, res;
     v1 = parseFloat(document.getElementById("number1").value);
     v2 = parseFloat(document.getElementById("number2").value);
+    let errorMessage = document.getElementById("errorMessage");
     res = document.getElementById("result");
     if (isNaN(v1) || isNaN(v2)) {
         res.style.color = "red";
         res.value = "Error";
+        errorMessage.style.fontSize = "1.5rem";
+        errorMessage.style.display = "block";
+        errorMessage.textContent = "Tuviste un error al teclear los numeros"
         return;
     } else {
         res.style.color = "black";
+        errorMessage.style.display = "none";
         switch (op) {
             case 1:
                 res.value = v1 + v2;
