@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.radioWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.mostrar {
+    display: block;
+    visibility: visible;
+}
+
+.ocultar {
+    display: none;
+    visibility: collapse;
+}

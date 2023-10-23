@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Agregar elemento</title>
+</head>
+
+<body>
+    <div class="radioWrapper">
+        <div>
+            <input type="radio" name="opcion" id="elementoRadio" checked>
+            <label for="elementoRadio">Agregar elemento a una lista</label>
+        </div>
+        <div>
+            <input type="radio" name="opcion" id="imagenRadio">
+            <label for="imagenRadio">Agregar imágenes</label>
+        </div>
+    </div>
+    <div class="mostrar" id="divLista">
+        <h3>Platillos:</h3>
+        <ul id="listaPlatillos">
+            <li>
+                Pizza
+            </li>
+            <li>
+                Hamburguesas
+            </li>
+        </ul>
+        <input type="button" value="Agregar elemento a la lista" id="agregarElementoButton">
+    </div>
+    <div class="ocultar" id="divImagen">
+        <input type="button" value="Agregar imágen" id="agregarImagenButton">
+        <div class="contenedorImagen" id="contenedorImagen">
+
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
