@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcf5e5;
+}
+
+main {
+  background-color: #faf9f6;
+  border: 1px solid #000;
+  width: 50%;
+  margin-top: 2rem;
+  padding: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ocultar {
+  display: none;
+  visibility: collapse;
+}
+
+.mostrar {
+  visibility: visible;
+  display: block;
+}
+
+.contenedor {
+  position: relative;
+  width: 600px;
+  aspect-ratio: 1;
+  border: 1px solid #000;
+  background-image: url("https://picsum.photos/600/600");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.interno {
+  position: absolute;
+  aspect-ratio: 1;
+  transition:all 0.8s ease-in-out;
+}
+
+.radio-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.875rem;
+}
+
+.radio-div {
+  padding: 1rem;
+  border: 1.5px solid #000;
+  border-radius: 0.875rem;
+  margin-top: 1rem;
+}
+
+.radio-div:nth-child(1) {
+  background-color: lightgreen;
+}
+
+.radio-div:nth-child(2) {
+  background-color: lightcoral;
+}
+
+.radio-div:nth-child(3) {
+  background-color: lightskyblue;
+}
+
+.radio-div:nth-child(4) {
+  background-color: lightpink;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.875rem;
+}
+
+.button-div > input[type="button"] {
+  padding: 1rem;
+  border: 1.5px solid #000;
+  border-radius: 0.875rem;
+  margin-top: 1rem;
+}
+
+.button-div:nth-child(1) {
+  background-color: lightsalmon;
+  padding: 0.5rem;
+  border: 1.5px solid #000;
+  border-radius: 0.875rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-div:nth-child(2) > input {
+  background-color: lightseagreen;
+}
+
+.button-div:nth-child(3) > input {
+  background-color: lightsteelblue;
+}

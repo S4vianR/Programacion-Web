@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <link rel="stylesheet" href="./style/index.css">
+    <!-- Icon -->
+    <link rel="icon" href="./assets/Tree.ico">
     <title>Mostrar imagen</title>
 </head>
+
 <body>
-    
+    <main>
+        <header>
+            <h1>
+                Mostrar imagen
+            </h1>
+        </header>
+        <div class="contenedor" id="contenedor"></div>
+        <div class="label-div">
+            <label for="">Numero de cuadros eliminados: </label><label for="numCuadros" id="numCuadros">0</label>
+        </div>
+        <div class="radio-wrapper">
+            <div class="radio-div">
+                <input type="radio" name="opcion" id="radio6"><label for="radio6">6x6</label>
+            </div>
+            <div class="radio-div">
+                <input type="radio" name="opcion" id="radio10"><label for="radio10">10x10</label>
+            </div>
+            <div class="radio-div">
+                <input type="radio" name="opcion" id="radio20"><label for="radio20">20x20</label>
+            </div>
+            <div class="radio-div">
+                <input type="radio" name="opcion" id="personalizado"><label for="personalizado">Personalizado</label>
+            </div>
+        </div>
+        <div class="button-wrapper">
+            <div class="button-div">
+                <label for="color">Color:</label>
+                <input type="color" name="color" id="color">
+            </div>
+            <div class="button-div">
+                <input type="button" value="Ver imagen" id="mostrarImagenButton">
+            </div>
+            <div class="button-div">
+                <input type="button" value="Reiniciar" id="reiniciarButton">
+            </div>
+        </div>
+    </main>
 </body>
 <script src="./js/index.js"></script>
+
 </html>
