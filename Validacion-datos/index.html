@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style/index.css">
+    <title>Validacion de datos</title>
+</head>
+
+<body>
+    <main>
+        <form action="algo.html" method="get" id="form1">
+            <header>
+                <h1>
+                    Datos personales
+                </h1>
+            </header>
+            <div class="input-container">
+                <div class="input-div">
+                    <label for="">Primer nombre: </label>
+                    <input type="text" placeholder="Escribe tu primer nombre" title="Escribe tu primer nombre"
+                        id="primerNombreInput" required autofocus>
+                    <div class="speech-bubble ocultar" id="speech1">
+                        <div class="innerDiv" id="nom">
+                            Favor de poner sus datos correctos
+                        </div>
+                    </div>
+                </div>
+                <div class="input-div">
+                    <label for="">Primer apellido:</label>
+                    <input type="text" placeholder="Escribe tu primer apellido" title="Escribe tu primer apellido"
+                        id="primerApellidoInput" required>
+                    <div class="speech-bubble ocultar" id="speech2">
+                        <div class="innerDiv" id="apell1">
+                            Favor de poner sus datos correctos
+                        </div>
+                    </div>
+                </div>
+                <div class="input-div">
+                    <label for="">Segundo apellido:</label>
+                    <input type="text" placeholder="Escribe tu segundo apellido" title="Escribe tu segundo apellido"
+                        id="segundoApellidoInput">
+                </div>
+                <div class="input-div">
+                    <label for="">Selecciona tu semestre: </label>
+                    <input type="number" name="numSemestre" id="semestreInput" min="1" max="13" required>
+                    <div class="speech-bubble ocultar" id="speech3">
+                        <div class="innerDiv" id="corr">
+                            Favor de poner sus datos correctos
+                        </div>
+                    </div>
+                </div>
+                <div class="input-div">
+                    <label for="">Correo electrónico:</label>
+                    <input type="email" name="correo" id="correoInput" placeholder="Escribe tu correo electrónico"
+                        title="Escribe tu correo electrónico" required>
+                        <div class="speech-bubble ocultar" id="speech4">
+                            <div class="innerDiv" id="corr">
+                                Favor de poner sus datos correctos
+                            </div>
+                        </div>
+                </div>
+                <div class="input-div">
+                    <label for="">Contraseña: </label>
+                    <input type="password" name="password" id="passwordInput" placeholder="Escribe una contraseña"
+                        title="Minimo 6, maximo 24" minlength="6" maxlength="24" required>
+                        <div class="speech-bubble ocultar" id="speech5">
+                            <div class="innerDiv" id="pass">
+                                Favor de poner sus datos correctos
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <input type="submit" value="Subir datos">
+            <input type="reset" value="Reiniciar formulario">
+        </form>
+    </main>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

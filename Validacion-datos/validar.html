@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Reuben Rhienhart 20112048 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacion de datos</title>
+
+    <style scoped>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        sup {
+            font-size: 0.75rem;
+            color: #000;
+        }
+
+        .input-container {
+            display: flex;
+            flex: 1;
+            gap: 1rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        form>input[type="submit"] {
+            margin-top: 1rem;
+            border: 1px solid #000;
+            background-color: lightslategray;
+            padding: 0.875rem;
+            border-radius: 0.5rem;
+        }
+
+        form>input[type="reset"] {
+            margin-top: 1rem;
+            border: 1px solid #000;
+            background-color: lightsteelblue;
+            padding: 0.875rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form action="algo.html" method="get" id="form1">
+            <header>
+                <h1>
+                    Datos personales
+                </h1>
+            </header>
+            <div class="input-container">
+                <div class="input-div">
+                    <label for="">Primer nombre: </label>
+                    <input type="text" placeholder="Escribe tu primer nombre" title="Escribe tu primer nombre"
+                        id="primerNombreInput" required autofocus><span id="nom"> * </span>
+                </div>
+                <div class="input-div">
+                    <label for="">Primer apellido:</label>
+                    <input type="text" placeholder="Escribe tu primer apellido" title="Escribe tu primer apellido"
+                        id="primerApellidoInput" required><span id="apell1"> * </span>
+                </div>
+                <div class="input-div">
+                    <label for="">Segundo apellido:</label>
+                    <input type="text" placeholder="Escribe tu segundo apellido" title="Escribe tu segundo apellido"
+                        id="segundoApellidoInput">
+                </div>
+                <div class="input-div">
+                    <label for="">Selecciona tu semestre: </label>
+                    <input type="number" name="numSemestre" id="semestreInput" min="1" max="13"><span id="sem"> *
+                    </span>
+                </div>
+                <div class="input-div">
+                    <label for="">Correo electrónico:</label>
+                    <input type="email" name="correo" id="correoInput" placeholder="Escribe tu correo electrónico"
+                        title="Escribe tu correo electrónico" required><span id="corr"> * </span>
+                </div>
+                <div class="input-div">
+                    <label for="">Contraseña: </label>
+                    <input type="password" name="password" id="passwordInput" placeholder="Escribe una contraseña"
+                        title="Minimo 6, maximo 24" minlength="6" maxlength="24" required><span id="pass"> * </span>
+                </div>
+            </div>
+            <input type="submit" value="Subir datos">
+            <input type="reset" value="Reiniciar formulario">
+        </form>
+    </main>
+    <script text="type/javascript">
+        const form1 = document.getElementById('form1');
+        const primerNombreInput = document.getElementById('primerNombreInput');
+        const primerApellidoInput = document.getElementById('primerApellidoInput');
+        const segundoApellidoInput = document.getElementById('segundoApellidoInput');
+        const semestreInput = document.getElementById('semestreInput');
+        const correoInput = document.getElementById('correoInput');
+        const passwordInput = document.getElementById('passwordInput');
+
+        primerNombreInput.addEventListener("blur", () => {
+            validarDatos(1)
+        });
+
+        primerApellidoInput.addEventListener("blur", () => {
+            validarDatos(2)
+        });
+
+        semestreInput.addEventListener("blur", () => {
+            validarDatos(3)
+        });
+
+        correoInput.addEventListener("blur", () => {
+            validarDatos(4)
+        });
+
+        passwordInput.addEventListener("blur", () => {
+            validarDatos(5)
+        });
+
+
+        function validarDatos(opcion) {
+            let validacion;
+            switch (opcion) {
+                case 1:
+                    validacion = primerNombreInput.validity;
+                    console.log(validacion);
+                    let nom = document.getElementById("nom");
+                    if (validacion.valueMissing) {
+                        primerNombreInput.setCustomValidity("Por favor ingrese su primer nombre");
+                        console.log(primerNombreInput.validationMessage)
+                        nom.style.color = "red";
+                        nom.innerHTML = primerNombreInput.validationMessage;
+                    } else if (!isNaN(parseInt(primerNombreInput.value))) {
+                        primerNombreInput.setCustomValidity("Por favor ingrese texto, no numeros");
+                        nom.style.color = "red";
+                        nom.innerHTML = primerNombreInput.validationMessage;
+                    } else {
+                        primerApellidoInput.setCustomValidity("");
+                        nom.style.color = "#000";
+                        nom.innerHTML = " * ";
+                    }
+                    break;
+                case 2:
+                    validacion = primerApellidoInput.validity;
+                    let apell1 = document.getElementById("apell1");
+                    console.log(validacion);
+
+                    if (validacion.valueMissing) {
+                        primerApellidoInput.setCustomValidity("Por favor ingrese su primer apellido");
+                        apell1.style.color = "red";
+                        apell1.innerHTML = primerApellidoInput.validationMessage;
+                    } else if (!isNaN(parseInt(primerApellidoInput.value))) {
+                        console.log("entro")
+                        primerApellidoInput.setCustomValidity("Por favor ingrese texto, no numeros");
+                        apell1.style.color = "red";
+                        apell1.innerHTML = primerApellidoInput.validationMessage;
+                    } else {
+                        primerApellidoInput.setCustomValidity("");
+                        apell1.style.color = "#000";
+                        apell1.innerHTML = " * ";
+                    }
+                    break;
+                case 3:
+                    // Case para el input number del semestre
+                    // Accion si esta vacio 
+                    validacion = semestreInput.validity;
+                    let sem = document.getElementById("sem");
+
+                    if (validacion.valueMissing) {
+                        semestreInput.setCustomValidity("Por favor ingrese su semestre");
+                        sem.style.color = "red";
+                        sem.innerHTML = semestreInput.validationMessage;
+                    } // badInput 
+                    else if (validacion.badInput) {
+                        semestreInput.setCustomValidity("Por favor ingrese un numero valido");
+                        sem.style.color = "red";
+                        sem.innerHTML = semestreInput.validationMessage;
+                    } // rangeOverflow
+
+                    else if (validacion.rangeOverflow) {
+                        semestreInput.setCustomValidity("Por favor ingrese un numero valido");
+                        sem.style.color = "red";
+                        sem.innerHTML = semestreInput.validationMessage;
+                    } // accion  si todo esta bien
+                    else {
+                        semestreInput.setCustomValidity("");
+                        sem.style.color = "#000";
+                        sem.innerHTML = " * ";
+                    }
+                    break;
+                case 4:
+                    // Validacion del correo
+                    validacion = correoInput.validity;
+                    let corr = document.getElementById("corr");
+
+                    if (validacion.valueMissing) {
+                        correoInput.setCustomValidity("Por favor ingrese su correo");
+                        corr.style.color = "red";
+                        corr.innerHTML = correoInput.validationMessage;
+                    } else if (validacion.typeMismatch) {
+                        correoInput.setCustomValidity("Por favor ingrese un correo valido");
+                        corr.style.color = "red";
+                        corr.innerHTML = correoInput.validationMessage;
+                    } else {
+                        correoInput.setCustomValidity("");
+                        corr.style.color = "#000";
+                        corr.innerHTML = " * ";
+                    }
+                    break;
+                case 5:
+                    // Validacion de la contraseña
+                    validacion = passwordInput.validity;
+                    let pass = document.getElementById("pass");
+
+                    if (validacion.valueMissing) {
+                        passwordInput.setCustomValidity("Por favor ingrese su contraseña");
+                        pass.style.color = "red";
+                        pass.innerHTML = passwordInput.validationMessage;
+                    } else if (validacion.tooLong || validacion.tooShort) {
+                        passwordInput.setCustomValidity("Por favor ingrese una contraseña de 8 a 16 caracteres");
+                        pass.style.color = "red";
+                        pass.innerHTML = passwordInput.validationMessage;
+                    } else {
+                        passwordInput.setCustomValidity("");
+                        pass.style.color = "#000";
+                        pass.innerHTML = " * ";
+                    }
+                    break;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

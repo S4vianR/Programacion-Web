@@ -44,7 +44,6 @@ main {
 
 .interno {
   position: absolute;
-  aspect-ratio: 1;
   transition:all 0.8s ease-in-out;
 }
 
