@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Reuben Rhienhart 20112048 -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validacion de datos</title>
+    <style scoped type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+                sans-serif;
+            background-color: #fff5ee;
+        }
+
+        main {
+            display: grid;
+            grid-template-rows: 1fr auto;
+            min-height: 98svh;
+        }
+
+        footer {
+            background-color: #36454F;
+            color: #fff;
+            padding: 0.5rem;
+            text-align: end;
+        }
+
+        .input-container {
+            display: flex;
+            flex: 1;
+            gap: 1rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .input-div {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 0.2rem;
+        }
+
+        form>input[type="submit"] {
+            margin-top: 1rem;
+            border: 1px solid #000;
+            background-color: lightslategray;
+            padding: 0.875rem;
+            border-radius: 0.5rem;
+        }
+
+        form>input[type="reset"] {
+            margin-top: 1rem;
+            border: 1px solid #000;
+            background-color: lightsteelblue;
+            padding: 0.875rem;
+            border-radius: 0.5rem;
+        }
+
+        .ocultar {
+            display: none;
+            visibility: collapse;
+        }
+
+        .speech-bubble {
+            position: relative;
+            background: #e30b5c;
+            border-radius: 0.4rem;
+            margin-left: 0.5rem;
+        }
+
+        .innerDiv {
+            color: #fff;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .speech-bubble:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 0.188rem solid transparent;
+            border-right-color: #e30b5c;
+            border-left: 0;
+            margin-top: -0.187rem;
+            margin-left: -0.187rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form action="algo.html" method="get" id="form1">
+            <header>
+                <h1>Datos personales</h1>
+            </header>
+            <div class="input-container">
+                <div class="input-div">
+                    <label for="">Primer nombre: </label>
+                    <input type="text" placeholder="Escribe tu primer nombre" title="Escribe tu primer nombre"
+                        id="primerNombreInput" required autofocus />
+                    <div class="speech-bubble ocultar" id="speech1">
+                        <div class="innerDiv" id="nom">
+                            Favor de poner sus datos correctos
+                        </div>
+                    </div>
+                </div>
+                <div class="input-div">
+                    <label for="">Primer apellido:</label>
+                    <input type="text" placeholder="Escribe tu primer apellido" title="Escribe tu primer apellido"
+                        id="primerApellidoInput" required />
+                    <div class="speech-bubble ocultar" id="speech2">
+                        <div class="innerDiv" id="apell1">
+                            Favor de poner sus datos correctos
+                        </div>
+                    </div>
+                </div>
+                <div class="input-div">
+                    <label for="">Segundo apellido:</label>
+                    <input type="text" placeholder="Escribe tu segundo apellido" title="Escribe tu segundo apellido"
+                        id="segundoApellidoInput" />
+                </div>
+                <div class="input-div">
+                    <label for="">Selecciona tu semestre: </label>
+                    <input type="number" name="numSemestre" id="semestreInput" min="1" max="13" required />
+                    <div class="speech-bubble ocultar" id="speech3">
+                        <div class="innerDiv" id="sem">
+                            Favor de poner sus datos correctos
+                        </div>
+                    </div>
+                </div>
+                <div class="input-div">
+                    <label for="">Correo electrónico:</label>
+                    <input type="email" name="correo" id="correoInput" placeholder="Escribe tu correo electrónico"
+                        title="Escribe tu correo electrónico" required />
+                    <div class="speech-bubble ocultar" id="speech4">
+                        <div class="innerDiv" id="corr">
+                            Favor de poner sus datos correctos
+                        </div>
+                    </div>
+                </div>
+                <div class="input-div">
+                    <label for="">Contraseña: </label>
+                    <input type="password" name="password" id="passwordInput" placeholder="Escribe una contraseña"
+                        title="Minimo 6, maximo 24" minlength="6" maxlength="24" required />
+                    <div class="speech-bubble ocultar" id="speech5">
+                        <div class="innerDiv" id="pass">
+                            Favor de poner sus datos correctos
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Subir datos" />
+            <input type="reset" value="Reiniciar formulario" />
+        </form>
+        <footer>
+            <p>
+                Reuben Rhienhart - 20112048
+            </p>
+        </footer>
+    </main>
+    <script type="text/Javascript">
+              const form1 = document.getElementById('form1');
+      const primerNombreInput = document.getElementById('primerNombreInput');
+      const primerApellidoInput = document.getElementById('primerApellidoInput');
+      const segundoApellidoInput = document.getElementById('segundoApellidoInput');
+      const semestreInput = document.getElementById('semestreInput');
+      const correoInput = document.getElementById('correoInput');
+      const passwordInput = document.getElementById('passwordInput');
+
+      primerNombreInput.addEventListener("blur", () => {
+          validarDatos(1)
+      });
+
+      primerApellidoInput.addEventListener("blur", () => {
+          validarDatos(2)
+      });
+
+      semestreInput.addEventListener("blur", () => {
+          validarDatos(3)
+      });
+
+      correoInput.addEventListener("blur", () => {
+          validarDatos(4)
+      });
+
+      passwordInput.addEventListener("blur", () => {
+          validarDatos(5)
+      });
+
+
+      function validarDatos(opcion) {
+          let validacion;
+          switch (opcion) {
+              case 1:
+                  validacion = primerNombreInput.validity;
+                  console.log(validacion);
+                  let nom = document.getElementById("nom");
+                  let speech1 = document.getElementById("speech1");
+                  if (validacion.valueMissing) {
+                      primerNombreInput.setCustomValidity("Por favor ingrese su primer nombre");
+                      console.log(primerNombreInput.validationMessage)
+                      speech1.classList.remove("ocultar")
+                      nom.textContent = primerNombreInput.validationMessage;
+                  } else if (!isNaN(parseInt(primerNombreInput.value))) {
+                      primerNombreInput.setCustomValidity("Por favor ingrese texto, no numeros");
+                      speech1.classList.remove("ocultar")
+                      nom.textContent = primerNombreInput.validationMessage;
+                  } else {
+                      primerApellidoInput.setCustomValidity("");
+                      speech1.classList.add("ocultar")
+                  }
+                  break;
+              case 2:
+                  validacion = primerApellidoInput.validity;
+                  let apell1 = document.getElementById("apell1");
+                  let speech2 = document.getElementById("speech2");
+                  console.log(validacion);
+
+                  if (validacion.valueMissing) {
+                      primerApellidoInput.setCustomValidity("Por favor ingrese su primer apellido");
+                      speech2.classList.remove("ocultar")
+                      apell1.textContent = primerApellidoInput.validationMessage;
+                  } else if (!isNaN(parseInt(primerApellidoInput.value))) {
+                      console.log("entro")
+                      primerApellidoInput.setCustomValidity("Por favor ingrese texto, no numeros");
+                      speech2.classList.remove("ocultar")
+                      apell1.textContent = primerApellidoInput.validationMessage;
+                  } else {
+                      primerApellidoInput.setCustomValidity("");
+                      speech2.classList.add("ocultar")
+                      apell1.textContent = " * ";
+                  }
+                  break;
+              case 3:
+                  // Case para el input number del semestre
+                  // Accion si esta vacio
+                  validacion = semestreInput.validity;
+                  let sem = document.getElementById("sem");
+                  let speech3 = document.getElementById("speech3");
+
+                  if (validacion.valueMissing) {
+                      semestreInput.setCustomValidity("Por favor ingrese su semestre");
+                      speech3.classList.remove("ocultar")
+                      sem.textContent = semestreInput.validationMessage;
+                  } // badInput
+                  else if (validacion.badInput) {
+                      semestreInput.setCustomValidity("Por favor ingrese un numero valido");
+                      speech3.classList.remove("ocultar")
+                      sem.textContent = semestreInput.validationMessage;
+                  } // rangeOverflow
+
+                  else if (validacion.rangeOverflow || validacion.rangeUnderflow) {
+                      semestreInput.setCustomValidity("Por favor ingrese un numero valido");
+                      speech3.classList.remove("ocultar")
+                      sem.textContent = semestreInput.validationMessage;
+                  } // accion  si todo esta bien
+                  else {
+                      semestreInput.setCustomValidity("");
+                      speech3.classList.add("ocultar")
+                  }
+                  break;
+              case 4:
+                  // Validacion del correo
+                  validacion = correoInput.validity;
+                  let corr = document.getElementById("corr");
+                  let speech4 = document.getElementById("speech4");
+
+                  if (validacion.valueMissing) {
+                      correoInput.setCustomValidity("Por favor ingrese su correo");
+                      speech4.classList.remove("ocultar")
+                      corr.textContent = correoInput.validationMessage;
+                  } else if (validacion.typeMismatch) {
+                      correoInput.setCustomValidity("Por favor ingrese un correo valido");
+                      speech4.classList.remove("ocultar")
+                      corr.textContent = correoInput.validationMessage;
+                  } else {
+                      correoInput.setCustomValidity("");
+                      speech4.classList.add("ocultar")
+                  }
+                  break;
+              case 5:
+                  // Validacion de la contraseña
+                  validacion = passwordInput.validity;
+                  let pass = document.getElementById("pass");
+                  let speech5 = document.getElementById("speech5");
+
+                  if (validacion.valueMissing) {
+                      passwordInput.setCustomValidity("Por favor ingrese su contraseña");
+                      speech5.classList.remove("ocultar")
+                      pass.textContent = passwordInput.validationMessage;
+                  } else if (validacion.tooLong || validacion.tooShort) {
+                      passwordInput.setCustomValidity("Por favor ingrese una contraseña de 6 a 24 caracteres");
+                      speech5.classList.remove("ocultar")
+                      pass.textContent = passwordInput.validationMessage;
+                  } else {
+                      speech5.classList.add("ocultar")
+                  }
+                  break;
+          }
+      }
+    </script>
+</body>
+
+</html>
