@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Evaluar un radio</title>
+</head>
+
+<body>
+    <main>
+        <form action="get">
+            <header>
+                <h3>
+                    Escribe tu nombre y sexo
+                </h3>
+            </header>
+            <div>
+                <label for="nameText">Escribe tu nombre: </label>
+                <input type="text" name="name" id="nameText" placeholder="Escribe tu nombre">
+            </div>
+            <div>
+                <label for="">Selecciona tu sexo:</label>
+            </div>
+            <div id="radiosDiv">
+                <input type="radio" name="sexo" id="femeninoRadio" value="femenino">
+                <label for="radio">Femenino</label>
+                <input type="radio" name="sexo" id="masculinoRadio" value="masculino">
+                <label for="radio">Masculino</label>
+            </div>
+            <div class="formButtons">
+                <input type="submit" value="Enviar" id="submitButton">
+                <input type="reset" value="Resetear" id="resetButton">
+            </div>
+            <div id="mensaje"></div>
+        </form>
+    </main>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
