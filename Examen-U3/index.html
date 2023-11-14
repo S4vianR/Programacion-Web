@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style/index.css">
+    <title>Examen U3</title>
+</head>
+
+<body>
+    <main>
+        <form action="#" method="get" id="vota-form">
+            <section class="block1" id="section1">
+                <header>
+                    <h1>
+                        Vota por tu favorito:
+                    </h1>
+                </header>
+                <div class="tortugas-container">
+                    <div>
+                        <img src="./assets/Leo.png" alt="leo">
+                        <div>
+                            <input type="radio" name="tortugas" id="leoRadio">
+                            <label for="leoRadio">Leonardo</label>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./assets/Doni.png" alt="doni">
+                        <div>
+                            <input type="radio" name="tortugas" id="doniRadio">
+                            <label for="doniRadio">Donatelo</label>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./assets/Rafa.png" alt="rafa">
+                        <div>
+                            <input type="radio" name="tortugas" id="rafaRadio">
+                            <label for="rafaRadio">Rafael</label>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./assets/Mikey.png" alt="miguel">
+                        <div>
+                            <input type="radio" name="tortugas" id="miguelRadio">
+                            <label for="miguelRadio">Miguel Angel</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="nombre-container">
+                    <label for="nombreInput">Nombre:</label>
+                    <input type="text" name="nombre" id="nombreInput" placeholder="Escribe tu nombre aquí">
+                </div>
+            </section>
+            <section class="block2" id="section2">
+                <div class="vota-container">
+                    <div id="vota-img"></div>
+                </div>
+                <div class="input-container">
+                    <input type="submit" value="Votar" id="submit-button">
+                    <input type="reset" value="Borrar" id="reset-button">
+                </div>
+            </section>
+        </form>
+    </main>
+    <!-- JS -->
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

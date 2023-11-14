@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="mx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="./styles/index.css"> -->
+    <style scoped>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90svw;
+            margin: auto;
+        }
+
+        /* .fetch__button {
+  background-color: #3b3b3b;
+  color: #fff;
+  border: none;
+  border-radius: 0.875rem;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.fetch__button:hover {
+  background-color: #818181;
+  color: #fff;
+} */
+
+        .boton__div {
+            align-self: flex-start;
+            justify-self: center;
+            padding: 0.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .boton__div>button {
+            /* Simple style, buttons color green */
+            background-color: #579b75;
+            color: #fff;
+            border: 1px solid #3b5546;
+            padding: 0.5rem 1rem;
+        }
+
+
+        .boton__div>button:hover {
+            background-color: #3b5546;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .resultado__div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            text-wrap: pretty;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #000;
+            border-radius: 0.875rem;
+            padding: 1rem;
+        }
+
+        .cards>img {
+            border: 1px solid #505050;
+            max-width: 85%;
+            height: 300px;
+        }
+    </style>
+    <title>Fetch de una api</title>
+</head>
+
+<body>
+    <main>
+        <!-- <input type="button" value="Fetch data" id="fetchButton" class="fetch__button"> -->
+        <div id="botones" class="boton__div"></div>
+        <div id="resultado" class="resultado__div"></div>
+    </main>
+
+    <!-- <script src="./js/index.js"></script> -->
+    <!-- <script src="./js/paginacion.js"></script> -->
+    <script text="type/javascript">
+        // const fetchButton = document.getElementById('fetchButton');
+        const divResultado = document.getElementById('resultado');
+
+
+        let resultado;
+        let numeroDeProductosPagina = 4;
+        let totalProd = 40;
+
+        window.addEventListener("load", () => {
+            paginacion();
+            consultar();
+        });
+
+        function consultar() {
+            // Regular Fetch
+            fetch(`https://dummyjson.com/products?limit=${totalProd}`)
+                .then(response => response.json())
+                .then(data => resultado = data)
+                .then(() => {
+                    procesar(1)
+                })
+                .catch((error) => {
+                    console.log(error);
+                    divResultado.innerHTML = error;
+                });
+        }
+
+        function procesar(pagina) {
+            let fragmento = new DocumentFragment();
+            let totalProductos = resultado.products.length;
+            console.log(`\nLa pagina seleccionada es ${pagina}`);
+            console.log(`El total de productos es ${totalProductos}`);
+
+            let indiceInicio = (pagina - 1) * numeroDeProductosPagina;
+            let indiceFinal = pagina * numeroDeProductosPagina;
+
+            console.log(`El indice inicial es ${indiceInicio}`);
+            console.log(`El indice final es ${indiceFinal}`);
+
+            for (let i = indiceInicio; i < indiceFinal; i++) {
+                let productoActual = resultado.products[i];
+                let nuevoDiv = document.createElement('div');
+                nuevoDiv.classList.add('cards')
+
+                // Titulo
+                let titulo = document.createElement('h2');
+                titulo.textContent = productoActual.title;
+                nuevoDiv.appendChild(titulo);
+
+                // Thumbnail
+                let thumbnail = document.createElement('img');
+                thumbnail.src = productoActual.thumbnail;
+                nuevoDiv.appendChild(thumbnail);
+
+                // Descripcion
+                let descripcion = document.createElement('p');
+                descripcion.textContent = productoActual.description;
+                nuevoDiv.appendChild(descripcion);
+
+                // Precio
+                let precio = document.createElement('h3');
+                precio.textContent = `Precio: $${productoActual.price}`
+                precio.style.fontWeight = '600';
+                nuevoDiv.appendChild(precio);
+                fragmento.appendChild(nuevoDiv);
+            }
+
+            divResultado.appendChild(fragmento);
+        }
+
+        function paginacion() {
+            let totalBotones = Math.ceil(totalProd / numeroDeProductosPagina);
+            let divBotones = document.getElementById('botones');
+            let botonNuevo;
+
+            for (let i = 1; i <= totalBotones; i++) {
+                botonNuevo = document.createElement('button');
+                botonNuevo.value = i;
+                botonNuevo.textContent = i;
+
+                botonNuevo.addEventListener('click', () => {
+                    divResultado.innerHTML = '';
+                    paginaActual = i;
+                    procesar(paginaActual);
+                    console.log(`Presionaste el boton ${i}`);
+                });
+
+                divBotones.appendChild(botonNuevo);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
